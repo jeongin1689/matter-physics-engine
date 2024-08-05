@@ -3,6 +3,7 @@ var Example = Example || {};
 
 /**
  * Matter.js : airFriction 함수
+ * 공기마찰을 표현한 기능
  * 
  * Example.airFriction은 함수의 한 종류
  * console.log(typeof Example.airFriction)
@@ -73,10 +74,10 @@ Example.airFriction = function() {
 
   Composite.add(world, mouseConstraint);
 
-  // keep the mouse in sync with rendering
+  // 렌더링과 마우스 동기화 유지
   render.mouse = mouse;
 
-  // fit the render viewport to the scene
+  // 렌더링 뷰포트를 씬에 맞추기
   Render.lookAt(render, {
     min: { x: 0, y: 0 },
     max: { x: 800, y: 600 }

@@ -30,13 +30,17 @@ engine: engine
 });
 
 // 바디 만들기 (바디 종류)
-var boxA = Bodies.rectangle(400, 200, 80, 80);
-var boxB = Bodies.rectangle(450, 50, 80, 80);
-var boxC = Bodies.circle(350, 50, 50, 50);
-var ground = Bodies.rectangle(400, 610, 810, 60, { isStatic: true });
+const bodies = [
+  Bodies.rectangle(450, 50, 80, 80),
+  Bodies.rectangle(350, 50, 80, 80),
+  Bodies.circle(350, 50, 50, 50),
+  Bodies.circle(250, 50, 80, 40),
+  // 아래는 벽임
+  Bodies.rectangle(400, 610, 810, 60, { isStatic: true })
+];
 
 // 위 선언한 bodies 보여주기
-Composite.add(engine.world, [boxA, boxB, boxC, ground]);
+Composite.add(engine.world, bodies);
 
 // 렌더러 실행
 Render.run(render);
