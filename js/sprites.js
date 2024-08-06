@@ -53,7 +53,6 @@ Example.sprites = function() {
         if (Common.random() > 0.35) {
             return Bodies.rectangle(x, y, 64, 64, {
                 render: {
-                    strokeStyle: '#ffffff',
                     sprite: {
                         texture: '../assets/img/puppy.png'
                     }
