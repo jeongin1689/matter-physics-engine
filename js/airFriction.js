@@ -1,6 +1,5 @@
 var Example = Example || {};
 
-
 /**
  * Matter.js : airFriction 함수
  * 공기마찰을 표현한 기능
@@ -49,6 +48,10 @@ Example.airFriction = function() {
   // 바디 만들기 (바디 종류)
   Composite.add(engine.world, [
     // 떨어지는 네모들
+    /**
+     * frictionAir : 중력 가속도
+     * 이외에도 여러가지 option 존재
+     */
     Bodies.rectangle(200, 100, 60, 60, { frictionAir: 0.001 }),
     Bodies.rectangle(400, 100, 60, 60, { frictionAir: 0.05 }),
     Bodies.rectangle(600, 100, 60, 60, { frictionAir: 0.1 }),
@@ -82,25 +85,6 @@ Example.airFriction = function() {
     min: { x: 0, y: 0 },
     max: { x: 800, y: 600 }
   });
-
-  // context for MatterTools.Demo
-  return {
-    engine: engine,
-    runner: runner,
-    render: render,
-    canvas: render.canvas,
-    stop: function() {
-        Matter.Render.stop(render);
-        Matter.Runner.stop(runner);
-    }
-  };
 };
-
-// Example.airFriction.title = 'Air Friction';
-// Example.airFriction.for = '>=0.14.2';
-
-// if (typeof module !== 'undefined') {
-//   module.exports = Example.airFriction;
-// }
 
 Example.airFriction();
