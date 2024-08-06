@@ -13,7 +13,6 @@
 /** 아래 주석을 풀어 콘솔을 확인하면 Matter에서 지원하는 수많은 모듈기능들이 나오니 한번 확인 해보세요. */
 //console.log(Matter);
 
-
 // 모듈 종류
 var Engine = Matter.Engine,
 Render = Matter.Render,
@@ -32,33 +31,13 @@ engine: engine
 
 // 바디 만들기 (바디 종류)
 const bodies = [
-  // Bodies.rectangle(450, 50, 80, 80),
-  // Bodies.rectangle(350, 50, 80, 80),
-  // Bodies.circle(350, 50, 50, 50),
-  // Bodies.circle(250, 50, 80, 40),
-  // 아래는 벽임
+  // 아래는 화면안에 그려지는 원과 사각형임
+  Bodies.circle(200, 10, 30, 40),
+  Bodies.rectangle(350, 50, 80, 80),
+  Bodies.rectangle(450, 50, 100, 100),
+  // 아래는 바디를 받쳐줄 벽임
   Bodies.rectangle(400, 610, 810, 60, { isStatic: true }),
-  Bodies.circle(200, 10, 30, {
-    render: {
-      sprite: {
-        texture: "./img/puppy.png",
-      },
-    },
-  })
 ];
-// var bodiesEtc = Bodies.circle(200, 50, 50, 50);
-
-// 번외 바디모듈 이미지 넣기
-// const puppy = Bodies.rectangle(
-//   {
-//     render: {
-//       sprite: {
-//         texture: "../../img/puppy.png",
-//       }
-//     }
-//   }
-// );
-
 // 위 선언한 bodies 보여주기
 Composite.add(engine.world, bodies);
 
