@@ -1,7 +1,7 @@
 var Example = Example || {};
 
 Example.sprites = function() {
-    var Engine = Matter.Engine,
+    let Engine = Matter.Engine,
         Render = Matter.Render,
         Runner = Matter.Runner,
         Composites = Matter.Composites,
@@ -12,11 +12,11 @@ Example.sprites = function() {
         Bodies = Matter.Bodies;
 
     // 엔진 생성
-    var engine = Engine.create(),
+    let engine = Engine.create(),
         world = engine.world;
 
     // 렌더러 생성
-    var render = Render.create({
+    let render = Render.create({
         element: document.body,
         engine: engine,
         options: {
@@ -30,11 +30,11 @@ Example.sprites = function() {
     Render.run(render);
 
     // runner 생성
-    var runner = Runner.create();
+    let runner = Runner.create();
     Runner.run(runner, engine);
 
     // 바디들 추가
-    var offset = 10,
+    let offset = 10,
         options = { 
             isStatic: true
         };
@@ -49,7 +49,7 @@ Example.sprites = function() {
         Bodies.rectangle(-offset, 300, 50.5, 600.5 + 2 * offset, options)
     ]);
 
-    var stack = Composites.stack(20, 20, 10, 4, 0, 0, function(x, y) {
+    let stack = Composites.stack(20, 20, 10, 4, 0, 0, function(x, y) {
         if (Common.random() > 0.35) {
             return Bodies.rectangle(x, y, 64, 64, {
                 render: {
@@ -76,7 +76,7 @@ Example.sprites = function() {
     Composite.add(world, stack);
 
     // add mouse control
-    var mouse = Mouse.create(render.canvas),
+    let mouse = Mouse.create(render.canvas),
         mouseConstraint = MouseConstraint.create(engine, {
             mouse: mouse,
             constraint: {

@@ -14,17 +14,17 @@
 //console.log(Matter);
 
 // 모듈 종류
-var Engine = Matter.Engine,
+let Engine = Matter.Engine,
 Render = Matter.Render,
 Runner = Matter.Runner,
 Bodies = Matter.Bodies,
 Composite = Matter.Composite;
 
 // 엔진 만들기 선언
-var engine = Engine.create();
+let engine = Engine.create();
 
 // 렌더러 만들기 선언
-var render = Render.create({
+let render = Render.create({
 element: document.body,
 engine: engine
 });
@@ -45,7 +45,7 @@ Composite.add(engine.world, bodies);
 Render.run(render);
 
 // 러너 만들기
-var runner = Runner.create();
+let runner = Runner.create();
 
 // 엔진 실행
 Runner.run(runner, engine);

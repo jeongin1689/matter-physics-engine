@@ -13,7 +13,7 @@ var Example = Example || {};
 Example.airFriction = function() {
 
   // 모듈 종류
-  var Engine = Matter.Engine,
+  let Engine = Matter.Engine,
   Render = Matter.Render,
   Runner = Matter.Runner,
   MouseConstraint = Matter.MouseConstraint,
@@ -22,11 +22,11 @@ Example.airFriction = function() {
   Bodies = Matter.Bodies;
 
   // 엔진 만들기 선언
-  var engine = Engine.create(),
+  let engine = Engine.create(),
   world = engine.world;
 
   // 렌더러 만들기 선언
-  var render = Render.create({
+  let render = Render.create({
     element: document.body,
     engine: engine,
     options: {
@@ -40,7 +40,7 @@ Example.airFriction = function() {
   Render.run(render);
 
   // 러너 만들기
-  var runner = Runner.create();
+  let runner = Runner.create();
 
   // 엔진 실행
   Runner.run(runner, engine);
@@ -64,7 +64,7 @@ Example.airFriction = function() {
   ]);
 
   // 마우스 컨트롤 추가하기 (이벤트)
-  var mouse = Mouse.create(render.canvas),
+  let mouse = Mouse.create(render.canvas),
   mouseConstraint = MouseConstraint.create(engine, {
     mouse: mouse,
     constraint: {
